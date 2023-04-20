@@ -1,30 +1,25 @@
-function Login(event) {
-    // alert("funtion called")
+function login(event) {
     event.preventDefault();
+    // alert("Login function called.")
+    var userEmail = document.getElementById("email").value;
+    var userPassword = document.getElementById("password").value;
+    // console.log(userEmail,userPassword,"check here")
 
+    var LS = JSON.parse(localStorage.getItem("user"));
+    // console.log(LS, " - LS here")
 
-    // Step 1  : Get user typed data from html to JS = Completed
-// Step 2 : Get all users data into JS from LS = Completed
-// Step 3 : Iterate all users (LS) with user typed data 
-// Step 4 : If email & password both match at same time then
-//  show user suceess
-
-    var useremail = document.getElementById("useremail").value; 
-    var userpassword = document.getElementById("userpassword").value;
-    console.log (useremail, userpassword," here")
-
-    var ls = JSON.parse(localStorage.getItem("user"));
-    console.log(ls,"ls")
-
-    var flag=false;
-    for (var i=0; i < ls.length ; i++) {
-        if (ls[i].useremail == useremail && ls[i].userpassword == password) {
-            console.log(ls[i])
+    var flag = false;
+    for (var i = 0; i < localStorage.length; i++) {
+        // console.log(i, LS[i])
+        // console.log(i, LS[i].userEmail, LS[i].userPassword )
+        if (localStorage[i].useremail == userEmail && localStorage[i].userpassword == userPassword) {
+            // alert("Email and Pass matchecd")
             flag = true;
-        } else {
-            alert("login successful.")
         }
-        
-        
+    }
+    if (flag == true) {
+        alert("Login successfull.")
+    } else {
+        alert("Credential not matched.")
     }
 }
