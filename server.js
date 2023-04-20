@@ -1,11 +1,11 @@
 function login(event) {
     event.preventDefault();
     // alert("Login function called.")
-    var userEmail = document.getElementById("email").value;
-    var userPassword = document.getElementById("password").value;
-    // console.log(userEmail,userPassword,"check here")
+    var userEmail = document.getElementById("useremail").value;
+    var userPassword = document.getElementById("userpassword").value;
+    console.log(userEmail,userPassword,"check here")
 
-    var LS = JSON.parse(localStorage.getItem("user"));
+    var LS = JSON.parse(localStorage.getItem("Users"));
     // console.log(LS, " - LS here")
 
     var flag = false;

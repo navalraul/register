@@ -35,7 +35,7 @@ function Register(event) {
             console.log("password should be alteast 8 digit....  ")
         }
     } else {
-        console.log("Please fill all firdlds...")
+        console.log("Please fill all fields...")
     }
 
 }
