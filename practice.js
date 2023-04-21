@@ -16,10 +16,13 @@ function login(event) {
             if (password == confirmpassword) {
 
                 var Ls = JSON.parse(localStorage.getItem("Users")) || []
+
+                var currentUser;
                 var flag = false;
                 for (var i = 0; i < Ls.length; i++) {
                     if (Ls[i].userEmail == email) {
                         flag = true;
+                        currentUser =Ls[i];
                     }
                 }
                 if (!flag) {
@@ -29,6 +32,9 @@ function login(event) {
                         userPassword: password,
                         userConfirmPassword: confirmpassword
                     }
+
+                    localStorage.setItem("currentUser", JSON.stringify(currentUser))
+                    window.location.href = './home.html'
                     // Ls.push(userdata);
                     localStorage.setItem("Users", JSON.stringify(Ls))
                     alert("Registration Successful")
